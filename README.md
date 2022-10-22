@@ -43,15 +43,24 @@ At the moment this library only support (**few**) callback functions for followi
 1. Bot join the chat, using `twb::Bot::BindOnJoinChannelChatCallback`.
 2. A user send a message in channel chat, using `twb::Bot::BindOnReceiveMessageCallback`.
 
-## Compatibility and test
+# Build example
+I've prepared an example that you can use in order to start working on your awesome bot. To build it you can use *CMake*, for example as follows:
+
+1. `mkdir build`
+2. `cd build`
+3. `cmake ..`
+
+Or just use *CMake GUI*.
+
+# Compatibility and test
 This library compilation has been tested on following compilers:
 - **Windows:** MSVC >= 2019
 - **Linux:** GCC Version 9.3.0
 
-## Contribute
+# Contribute
 Contributions are welcome, here's a list of possible features to work on:
 * New events to which can be binded callback functions
 * Additional `IRCMessage`(s)
 * `IRCMessage` built from string (e.g.: `"PING :tmi.twitch.tv"` builds a `IRCMessage{.type = PING, .message = ":tmi.twitch.tv"}`)
 * Better interface
-* Test on MacOS and Linux
+* Test on *MacOS* and *Linux*
