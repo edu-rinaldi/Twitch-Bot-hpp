@@ -13,6 +13,7 @@ Header only library for creating custom twitch bots. In order to use this librar
 int main(int argc, char** argv)
 {
     const char* user        = "edu_rinaldi";
+    // Obtain password from: https://twitchapps.com/tmi/
     const char* password    = "<Password>";
     const char* channel     = "edu_rinaldi";
     // Create the bot
