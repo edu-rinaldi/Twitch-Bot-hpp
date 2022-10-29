@@ -57,7 +57,7 @@ The `example/CMakeLists.txt` file shows you a simple and clean way to include th
 # Compatibility and test
 This library compilation has been tested on following compilers:
 - **Windows:** MSVC >= 2019
-- **Linux:** GCC Version 9.3.0
+- **Linux:** GCC Version 9.3.0, Clang 10.0.0
 
 # Contribute
 Contributions are welcome, here's a list of possible features to work on:
