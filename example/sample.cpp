@@ -1,5 +1,5 @@
 #include <iostream>
-#include <twitch_bot.hpp>
+#include <twb/twitch_bot.hpp>
 
 int main()
 {

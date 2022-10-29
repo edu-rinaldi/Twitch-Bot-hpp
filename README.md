@@ -8,28 +8,28 @@ Header only library for creating custom twitch bots. In order to use this librar
 **Example:**
 
 ```cpp
-#include <twitch_bot.hpp>
+#include <iostream>
+#include <twb/twitch_bot.hpp>
 
-int main(int argc, char** argv)
+int main()
 {
-    const char* user        = "edu_rinaldi";
-    // Obtain password from: https://twitchapps.com/tmi/
-    const char* password    = "<Password>";
-    const char* channel     = "edu_rinaldi";
-    // Create the bot
-    twb::Bot myBot(user, password);
+	std::string user = "<Username>";
+	// Obtain password from: https://twitchapps.com/tmi/
+	std::string pass = "<Password>";
+	
+	std::string channel = "<ChannelName>";
 
-    // Bind functions
-    myBot.BindOnReceiveMessageCallback([&](const std::string& senderUsername, const std::string& senderMessage) 
-    { 
-        std::cout << senderUsername << ": " << senderMessage << std::endl;
-        myBot.Message("Hi @" + senderUsername); 
-    });
+	twb::Bot myBot(user, pass);
 
-    myBot.BindOnJoinChannelChatCallback([&]() { myBot.Message("Hello everyone, I just joined the chat!"); });
+	myBot.BindOnReceiveMessageCallback([&](const std::string& senderUsername, const std::string& senderMessage) {
+		std::cout << senderUsername << ": " << senderMessage << std::endl;
+		myBot.Message("Hi @" + senderUsername);
+	});
 
-    // Connect and join channel's chat
-    myBot.Connect(channel);
+	myBot.BindOnJoinChannelChatCallback([&]() { myBot.Message("Hello everyone, I just joined the chat!"); });
+	myBot.ConnectTo(channel);
+
+	return 0;
 }
 ```
 
@@ -51,7 +51,8 @@ I've prepared an example that you can use in order to start working on your awes
 2. `cd build`
 3. `cmake ..`
 
-Or just use *CMake GUI*.
+The `example/CMakeLists.txt` file shows you a simple and clean way to include this library in your project using CMake.
+
 
 # Compatibility and test
 This library compilation has been tested on following compilers:
